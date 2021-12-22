@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship
 from os import gentenv
 
 
-class State(BaseModel):
+class State(BaseModel, Base):
     """ State class """
     if models.storage_t == "db":
         __tablename__ = 'states'
