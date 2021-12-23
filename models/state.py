@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """Defines the State class."""
 import models
 from os import getenv
@@ -33,3 +34,21 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     city_list.append(city)
             return city_list
+=======
+""" State Module for HBNB project """
+from models.base_model import BaseModel, Base
+import sqlalchemy
+from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy.orm import relationship
+from os import gentenv
+
+
+class State(BaseModel, Base):
+    """ State class """
+    if models.storage_t == "db":
+        __tablename__ = 'states'
+        name = Column(String(128), nullable=False)
+        cities = relationship("City", backref="state")
+    else:
+        name = ""
+>>>>>>> ebe09c5eae79e587efce1d62062a6740d55447a1

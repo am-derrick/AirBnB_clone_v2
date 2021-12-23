@@ -22,6 +22,7 @@ class FileStorage:
     __objects = {}
 
     def all(self, cls=None):
+<<<<<<< HEAD
         """Return a dictionary of instantiated objects in __objects.
 
         If a cls is specified, returns a dictionary of objects of that type.
@@ -36,6 +37,16 @@ class FileStorage:
                     cls_dict[k] = v
             return cls_dict
         return self.__objects
+=======
+        """Returns a list of objects of one type of class"""
+        if cls is not None:
+            dict_new = {}
+            for key, value in self.__objects.items():
+                if cls == value.__class__ or cls == value.__class__.__name__:
+                    dict_new[key] = value
+            return dict_new
+        return FileStorage.__objects
+>>>>>>> ebe09c5eae79e587efce1d62062a6740d55447a1
 
     def new(self, obj):
         """Set in __objects obj with key <obj_class_name>.id."""
@@ -59,6 +70,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
+<<<<<<< HEAD
         """Delete a given object from __objects, if it exists."""
         try:
             del self.__objects["{}.{}".format(type(obj).__name__, obj.id)]
@@ -68,3 +80,12 @@ class FileStorage:
     def close(self):
         """Call the reload method."""
         self.reload()
+=======
+        """Deletes obj from __objects"""
+        if obj is not None:
+            key = obj.__class__.__name__ + '.' + obj.id
+            if key in self.__objects:
+                del self.__objects[key]
+
+    
+>>>>>>> ebe09c5eae79e587efce1d62062a6740d55447a1
