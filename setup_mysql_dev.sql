@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 -- Creates a MySQL server with:
 --   Database hbnb_dev_db.
 --   User hbnb_dev with password hbnb_dev_pwd in localhost.
