@@ -22,6 +22,7 @@ def do_pack():
     except:
         return None
 
+    
 def do_deploy(archive_path):
     """distributes an archive to web server"""
     if exists(archive_path) is False:
@@ -42,9 +43,10 @@ def do_deploy(archive_path):
     except:
         return False
 
-do deploy():
-        """creates and distributes archive to web servers"""
-        archive_path = do_pack()
-        if archive_path is None:
-            return False
-        return do_deploy(archive_path)
+    
+def deploy():
+    """creates and distributes archives to web servers"""
+    archive_path = do_pack()
+    if archive_path is None:
+        return False
+    return do_deploy(archive_path)
